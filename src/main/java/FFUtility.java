@@ -1,4 +1,4 @@
-import org.utility.FileProcessor;
+import org.utility.FileProcesser;
 import org.utility.options.OptionParser;
 
 public class FFUtility {
@@ -11,8 +11,8 @@ public class FFUtility {
             System.exit(-1);
         }
 
-        FileProcessor processor = new FileProcessor(utils);
-        processor
+        var processer = new FileProcesser(utils);
+        processer
                 .processFiles(utils.getFiles())
                 .createFiles()
                 .printStatistics();
