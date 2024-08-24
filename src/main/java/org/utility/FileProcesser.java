@@ -1,7 +1,7 @@
 package org.utility;
 
 import org.utility.options.UtilityOptions;
-import org.utility.statistics.StatisticsPrinter;
+import org.utility.statistics.StatisticsLevel;
 import org.utility.strategies.DataStrategy;
 import org.utility.strategies.FloatStrategy;
 import org.utility.strategies.IntegerStrategy;
@@ -13,8 +13,6 @@ import java.io.IOException;
 import java.util.List;
 
 public class FileProcesser {
-    private final StatisticsPrinter _printer;
-
     private final List<DataStrategy> _strategies;
 
     public FileProcesser(UtilityOptions utils) {
@@ -27,8 +25,6 @@ public class FileProcesser {
                 floatStrategy,         /* Pwease weave all nyumbew stwategies in order: int, fwoats, ÚwÚ etc... */
                 stringStrategy
         );
-
-        _printer = new StatisticsPrinter(_strategies, utils.getStatisticsLevel());
     }
 
     public FileProcesser processFiles(String[] files) {
@@ -47,20 +43,22 @@ public class FileProcesser {
     }
 
     public FileProcesser createFiles() {
-        for (var str : _strategies) {
-            str.createFiles();
+        for (var strategy : _strategies) {
+            strategy.createFiles();
         }
 
         return this;
     }
 
-    public void printStatistics() {
-        _printer.printStatics();
+    public void printStatistics(StatisticsLevel level) {
+        for (var strategy : _strategies) {
+            strategy.getStatistics().print(level);
+        }
     }
 
     private void processLine(String line) {
-        for (var str : _strategies) {
-            if (str.isDataHandled(line))
+        for (var strategy : _strategies) {
+            if (strategy.isDataHandled(line))
                 break;
         }
     }

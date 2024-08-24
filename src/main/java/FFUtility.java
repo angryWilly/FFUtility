@@ -15,6 +15,6 @@ public class FFUtility {
         processer
                 .processFiles(utils.getFiles())
                 .createFiles()
-                .printStatistics();
+                .printStatistics(utils.getStatisticsLevel());
     }
 }
