@@ -10,8 +10,8 @@ public class OptionParser {
     private final String[] _args;
     private final org.apache.commons.cli.Options _options;
 
-    private final Option ARG_OUTPUT = new Option("o", "output", true, "specifies >w< the *boops your nose* output fiwe diwectowy [Defauwt: cuwwent diwectowy]");
-    private final Option ARG_PREFIX = new Option("p", "prefix", true, "specifies >w< a pwefix fow output fiwe nyames [Example: result_]");
+    private final Option ARG_OUTPUT = new Option("o", "output", true, "Specifies >w< the *boops your nose* output fiwe diwectowy [Defauwt: cuwwent diwectowy]");
+    private final Option ARG_PREFIX = new Option("p", "prefix", true, "Specifies >w< a pwefix fow output fiwe nyames [Example: result_]");
     private final Option ARG_APPEND = new Option("a", "append", false, "Enyabwes append mode fow wwiting to fiwes [Defauwt: uvwwwite mode]");
     private final Option ARG_SHORT = new Option("s", "short", false, "Enyabwes cowwection of bwief statistics");
     private final Option ARG_FULL = new Option("f", "full", false, "Enyabwes cowwection of detaiwed statistics");
