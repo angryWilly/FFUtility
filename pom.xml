@@ -5,8 +5,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.angryWilly</groupId>
-    <artifactId>ff</artifactId>
-    <version>u</version>
+    <artifactId>ffu</artifactId>
+    <version>0.1</version>
 
     <properties>
         <maven.compiler.source>21</maven.compiler.source>
@@ -23,6 +23,7 @@
     </dependencies>
 
     <build>
+        <finalName>ffu</finalName>
         <plugins>
             <plugin>
                 <artifactId>maven-assembly-plugin</artifactId>

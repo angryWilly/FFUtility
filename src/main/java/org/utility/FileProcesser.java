@@ -1,6 +1,6 @@
 package org.utility;
 
-import org.utility.options.UtilityOptions;
+import org.utility.options.CommandLineOptions;
 import org.utility.statistics.StatisticsLevel;
 import org.utility.strategies.DataStrategy;
 import org.utility.strategies.FloatStrategy;
@@ -15,7 +15,7 @@ import java.util.List;
 public class FileProcesser {
     private final List<DataStrategy> _strategies;
 
-    public FileProcesser(UtilityOptions utils) {
+    public FileProcesser(CommandLineOptions utils) {
         var integerStrategy = new IntegerStrategy(utils.getOutputPath(), utils.getFilePrefix(), utils.getAppend());
         var floatStrategy = new FloatStrategy(utils.getOutputPath(), utils.getFilePrefix(), utils.getAppend());
         var stringStrategy = new StringStrategy(utils.getOutputPath(), utils.getFilePrefix(), utils.getAppend());

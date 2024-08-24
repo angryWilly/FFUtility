@@ -33,7 +33,7 @@ public class OptionParser {
         addOptions();
     }
 
-    public UtilityOptions parseOptions() {
+    public CommandLineOptions parseOptions() {
         CommandLineParser parser = new DefaultParser();
         try {
             CommandLine line = parser.parse(_options, _args);
@@ -60,7 +60,7 @@ public class OptionParser {
 
             String[] files = line.getArgs();
 
-            return new UtilityOptions(outputDir, prefix, append, statLevel, files);
+            return new CommandLineOptions(outputDir, prefix, append, statLevel, files);
 
         } catch (ParseException exp) {
             System.out.println("Error parsing command line options. \n" + exp.getMessage());
@@ -72,7 +72,7 @@ public class OptionParser {
         HelpFormatter formatter = new HelpFormatter();
         PrintWriter pw = new PrintWriter(System.out);
         pw.println();
-        formatter.printUsage(pw, 100, "java -jar ffu.jar", _options);
+        formatter.printUsage(pw, 100, "java -jar ff-u-jar-with-dependencies.jar", _options);
         formatter.printOptions(pw, 150, _options, 2, 5);
         pw.close();
     }
