@@ -4,17 +4,17 @@ import org.utility.options.OptionParser;
 public class FFUtility {
     public FFUtility(String[] args) {
         var parser = new OptionParser(args);
-        var utils = parser.parseOptions();
+        var options = parser.parseOptions();
 
-        if (utils == null) {
+        if (options == null) {
             parser.printHelp();
             System.exit(-1);
         }
 
-        var processer = new FileProcesser(utils);
+        var processer = new FileProcesser(options);
         processer
-                .processFiles(utils.getFiles())
+                .processFiles(options.getFiles())
                 .createFiles()
-                .printStatistics(utils.getStatisticsLevel());
+                .printStatistics(options.getStatisticsLevel());
     }
 }
