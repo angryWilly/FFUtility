@@ -50,5 +50,5 @@ java -jar target/ffu.jar [options] file1.txt file2.txt ...
 ### Example
 
 ```bash
-java -jar target/ffu.jar -a -f -o /result/files -p result_ in1.txt in2.txt
+java -jar target/ffu.jar -s -a -p sample- in1.txt in2.txt
 ```
