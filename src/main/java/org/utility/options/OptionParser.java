@@ -72,7 +72,7 @@ public class OptionParser {
         HelpFormatter formatter = new HelpFormatter();
         PrintWriter pw = new PrintWriter(System.out);
         pw.println();
-        formatter.printUsage(pw, 100, "java -jar ff-u-jar-with-dependencies.jar", _options);
+        formatter.printUsage(pw, 100, "java -jar ffu.jar", _options);
         formatter.printOptions(pw, 150, _options, 2, 5);
         pw.close();
     }
