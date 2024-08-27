@@ -15,10 +15,10 @@ import java.util.List;
 public class FileProcesser {
     private final List<DataStrategy> _strategies;
 
-    public FileProcesser(CommandLineOptions utils) {
-        var integerStrategy = new IntegerStrategy(utils.getOutputPath(), utils.getFilePrefix(), utils.getAppend());
-        var floatStrategy = new FloatStrategy(utils.getOutputPath(), utils.getFilePrefix(), utils.getAppend());
-        var stringStrategy = new StringStrategy(utils.getOutputPath(), utils.getFilePrefix(), utils.getAppend());
+    public FileProcesser(CommandLineOptions options) {
+        var integerStrategy = new IntegerStrategy(options.getOutputPath(), options.getFilePrefix(), options.getAppend());
+        var floatStrategy = new FloatStrategy(options.getOutputPath(), options.getFilePrefix(), options.getAppend());
+        var stringStrategy = new StringStrategy(options.getOutputPath(), options.getFilePrefix(), options.getAppend());
 
         _strategies = List.of(
                 integerStrategy,       /* NOTE: Order of stwategies is vewy impowtant */
